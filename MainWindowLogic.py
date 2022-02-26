@@ -1,3 +1,4 @@
+from PyQt5 import QtWidgets;
 from PyQt5.QtWidgets import QMainWindow, QPushButton;
 import sys;
 
@@ -12,6 +13,14 @@ class MainWindowLogic(QMainWindow, Ui_MainWindow):
         # React button click event: https://stackoverflow.com/questions/37534093/how-to-react-to-a-button-click-in-pyqt5
         self.exitButton.clicked.connect(self.ExitEvent);
 
+        self.changeTextButton.clicked.connect(self.ChangeOutputTextToUserInput);
+
     def ExitEvent(self):
         print("exit clicked!");
         sys.exit();
+
+    def ChangeOutputTextToUserInput(self):
+        userInputStr = self.userInputLineEdit.text();
+        currentOutputStr = self.outputDisplayTextBrowser.toPlainText();
+        self.outputDisplayTextBrowser.setPlainText(userInputStr);
+        print(f"changed text in output from {currentOutputStr} to {userInputStr}");

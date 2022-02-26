@@ -21,7 +21,10 @@
        <enum>QLayout::SetMaximumSize</enum>
       </property>
       <item>
-       <widget class="QTextBrowser" name="textBrowser">
+       <widget class="QLineEdit" name="userInputLineEdit"/>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="outputDisplayTextBrowser">
         <property name="placeholderText">
          <string>Initial text</string>
         </property>
@@ -30,7 +33,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="changeTextButton">
           <property name="text">
            <string>Click to change text content</string>
           </property>
